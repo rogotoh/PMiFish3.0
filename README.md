@@ -82,9 +82,3 @@ All results are automatically organized and saved in the `Results/` directory. T
 
 ## 🤝 Acknowledgment
 This work was supported by **JSPS KAKENHI Grant Number 23K05282**. This script was refined and released as part of the research project funded by this grant.
-
-## 📝 How to Cite
-
-If you use PMiFish in your research, please cite it as follows:
-
-> Gotoh, R. O. (2026). PMiFish: A pipeline for MiFish eDNA metabarcoding analysis (Version 3.0.0). Available from https://github.com/rogotoh/PMiFish3.0. doi:10.5281/zenodo.20065052
