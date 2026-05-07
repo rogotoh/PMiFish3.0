@@ -1,0 +1,19 @@
+DADA2 Options Used In Each Step
+
+#The values of options marked with * can be changed.
+#Please check the DADA2 homepage for details on each option.
+#If you want to use an option other than those listed here, please modify the script directly.
+
+########## FilterAndTrim ##########
+	*truncLen = c(0,0)	(Default value c(0,0))
+	*maxN = 0		(Default value 0)
+	*maxEE = c(2,2)		(Default value c(2,2))
+	*truncQ = 2		(Default value 2)
+
+########## mergePairs ##########
+	*minOverlap = 12	(Default value 12)
+	*maxMismatch = 0	(Default value 0)
+
+########## Quality_profile ##########
+Whether to create a quality profile.
+	Quality_profile = no	(Yes/No)

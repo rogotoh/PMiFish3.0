@@ -1,0 +1,139 @@
+######################## Caution ########################
+# Do NOT use spaces in file names (e.g., Database files).
+# Use "_" (underscore) or "-" (hyphen) instead of spaces.
+#########################################################
+
+### Database File Settings ###
+DB = MiFish_DB_v50.fas
+
+### Primer settings ###
+Primers = Primers.txt
+MaxDiff = 2
+Shift = 4
+Divide = no
+
+### Length Filter ###
+Length = 50
+
+### Depth Filter ###
+Depth = 4
+
+### Denoising ###
+Denoise = yes
+Algorithm = 1
+#USEARCH/VSEARCH option
+Type = 1
+
+### Rarefaction Settings ###
+Rarefaction = no
+
+### OTU Clustering Settings ###
+Clustering = no
+Algorithm2 = 2
+#USEARCH/VSEARCH option
+Cluster_Identity = 98.5
+#SWARM option
+Difference = 2
+
+## Post-Clustering curation by LULU
+Curation = no
+pcid = 0.98
+
+### Similarity Thresholds for Homology Search ###
+UIdentity = 98.5
+LIdentity = 80
+
+### Dictionaries ###
+Common_name = Sname_Jname.txt
+Family = Family_name.txt
+
+### Delete Temporary Fastq and Fasta Files After 1_Preprocessing Step ###
+Temporary = yes
+
+### Compress FASTQ Files to .gz Format After Analysis ###
+Compress = no
+
+
+===================== Explanation of Each Setting =====================
+### Database File Settings ###
+ex) DB = <filename> 
+ # The name of DataBase file (FASTA format) located in "DataBase" directory.
+
+### Primer settings ###
+ex) Primers = <filename> or NO
+ # Specify the primer file name (must be in the "DataBase" directory).
+ # If your data has already been trimmed for primer regions, set "Primers = NO".
+ex) MaxDiff = <number> or length
+ # Maximum allowed mismatches within the primer region.
+ # When set to "MaxDiff = length," trimming is simply based on the length of the primer. 
+ # When a numerical value is specified, the read is trimmed based on the primer sequence while allowing mismatches up to the specified value.
+ex) Shift = <number>
+ # The allowable number of bases from the start of the read to the 5' end of the primer.
+ex) Divide = YES or NO
+ # Divide Reads by Primer Pairs
+ # YES = Divide reads into separate files for each primer pair, NO = Do not divide.
+
+### Length Filter ###
+ex) Length = <number>
+ # Remove reads shorter than __ base pairs.
+
+### Depth Filter ###
+ex) Depth = <number> or <number>%
+ # Remove unique sequences that appear fewer than __ times.
+ # You can also set this as a percentage (e.g., "Depth = 0.01%" will remove sequences with fewer reads than 0.01% of total reads after finding unique sequences.)
+
+### Denoising ###
+ex) Denoise = YES or NO
+ # YES = Perform denoising, NO = Skip denoising.
+ex) Algorithm = <number>
+ # 1 = USEARCH/VSEARCH
+ # 2 = DADA2
+ex) Type = <number>
+ # UNOISE-only option:
+ # 1 = Individual (denoise each sample separately)
+ # 2 = Pool (denoise all samples together)
+
+### Rarefaction Settings ###
+ex) Rarefaction = <number> or NO
+ # Downsize each sample to _______ reads.
+ # If you do not want to apply rarefaction, set "Rarefaction = NO".
+
+### OTU Clustering Settings ###
+ex) Clustering = YES or NO
+ # YES = Perform clustering, NO = Skip clustering.
+ex) Algorithm2 = <number>
+ # 1 = USEARCH/VSEARCH
+ # 2 = SWARM
+ex) Cluster_Identity = <number>
+ # USEARCH/VSEARCH-only option
+ # Similarity Threshold for Clustering (%)
+ex) Difference = <number>
+ # SWARM-only option
+ # Clustering to group related sequence by defference(s) in their nucleotide sequences (default = 1)
+
+## Post-Clustering curation by LULU
+ex) Curation = YES or NO
+ # YES = Perform curation, NO = Skip curation.
+ex) pcid = 0.84
+ #Similarity Threshold for curation
+ #Please adjust this value according to the evolutionary rate of the marker region you are using
+
+### Similarity Thresholds for Homology Search ###
+ex) UIdentity = <number>
+ # Upper Threshold (%)
+ex) LIdentity = <number>
+ # Lower Threshold (%)
+
+### Dictionaries ###
+ex) Common_name = <filename>
+ex) Family = <filename>
+ #Set reference dictionaries for standard names and family names. 
+ #These files must be placed in the Dictionary folder. To disable, set NO.
+
+### Delete Temporary Fastq and Fasta Files After 1_Preprocessing Step ###
+ex) Temporary = YES or NO
+ # YES = Delete temporary files, NO = Keep them.
+
+### Compress FASTQ Files to .gz Format After Analysis ###
+ex) Compress = YES or NO
+ # YES = Compress files, NO = Keep files uncompressed.

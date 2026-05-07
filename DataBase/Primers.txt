@@ -1,0 +1,29 @@
+# The Forward and Reverse primers must have the SAME name.
+# Do NOT use spaces in primer names. Use "_" (underscore) or "-" (hyphen) instead of spaces.
+# If you add "#" at the BEGINNING of a line, that primer will NOT be used in the analysis.
+
+
+Forward primers
+#>MiDeca
+#NNNNNNGGACGATAAGACCCTATAAA
+>MiFish-Unity
+NNNNGYYGGTAAAWCTCGTGCCAGC
+#>MiFish-U
+#NNNNGTCGGTAAAACTCGTGCCAGC
+#>MiFish-E-v2
+#NNNNNNRGTTGGTAAATCTCGTGCCAGC
+#>MiFish-U2
+#NNNNNNGCCGGTAAAACTCGTGCCAGC
+
+
+Reverse primers
+#>MiDeca
+#ACGCTGTTATCCCTAAAGT
+>MiFish-Unity
+NNNNCATAGKRGGGTRTCTAATCCYMGTTTG
+#>MiFish-U
+#NNNNCATAGTGGGGTATCTAATCCCAGTTTG
+#>MiFish-E-v2
+#NNNNNNGCATAGTGGGGTATCTAATCCTAGTTTG
+#>MiFish-U2
+#NNNNNNCATAGGAGGGTGTCTAATCCCCGTTTG
