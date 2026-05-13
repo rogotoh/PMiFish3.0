@@ -85,6 +85,17 @@ This work was supported by **JSPS KAKENHI Grant Number 23K05282**. This script w
 
 ## 📝 How to Cite
 
-If you use PMiFish ver. 3.0 in your research, please cite it as follows:
+If you use this package in your research, please cite the following components appropriately:
+
+### 1. PMiFish Pipeline (Software)
 
 > Gotoh, R. O. (2026). PMiFish: A pipeline for MiFish data analysis (Version 3.0). Zenodo. https://doi.org/10.5281/zenodo.20065051
+
+### 2. Reference Database (MiFish_DB)
+The reference database provided in this repository was developed by T. Sado.
+
+>Sado, T. (2026). MiFish_DB.fas: A curated reference database for fish eDNA metabarcoding (Version 50). Included in PMiFish package (Version 3.0) by R. O. Gotoh. Zenodo. https://doi.org/10.5281/zenodo.20065051
+
+[!IMPORTANT]
+This database is built upon the following foundational studies. Please ensure you cite them: 
+>Miya, M., et al. (2020). MiFish metabarcoding: a high-throughput approach for simultaneous detection of multiple fish species from environmental DNA and other samples. Fisheries Science 86: 939-970.
