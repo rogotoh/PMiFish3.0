@@ -94,7 +94,7 @@ If you use this package in your research, please cite the following components a
 ### 2. Reference Database (MiFish_DB)
 The reference database provided in this repository was developed by T. Sado.
 
->Sado, T. (2026). MiFish_DB.fas: A curated reference database for fish eDNA metabarcoding (Version 50). Included in PMiFish package (Version 3.0) by R. O. Gotoh. Zenodo. https://doi.org/10.5281/zenodo.20065051
+>Sado, T. (2026). MiFish_DB: A curated reference database for fish eDNA metabarcoding (Version 50). Included in PMiFish package (Version 3.0) by R. O. Gotoh. Zenodo. https://doi.org/10.5281/zenodo.20065051
 
 [!IMPORTANT]
 This database is built upon the following foundational studies. Please ensure you cite them: 
