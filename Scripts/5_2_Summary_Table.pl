@@ -316,24 +316,13 @@ foreach(sort {$a cmp $b} keys %table){
 	if($lca{$spname}){
 		my $lca = $lca{$spname};
 		my $total = 0;
-		my $score = 0;
-		foreach(keys %$lca){
-			if($_ eq "Kingdom"){$score = $score + 7* $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
-			elsif($_ eq "Phylum" or $_ eq ">Phylum"){$score = $score + 6* $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
-			elsif($_ eq "Class" or $_ eq ">Class"){$score = $score + 5* $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
-			elsif($_ eq "Order" or $_ eq ">Order"){$score = $score + 4* $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
-			elsif($_ eq "Family" or $_ eq ">Family"){$score = $score + 3 * $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
-			elsif($_ eq "Genus"){$score = $score + 2 * $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
-			elsif($_ eq "Species"){$score = $score + 1 * $lca{$spname}{$_}; $total += $lca{$spname}{$_};}
+		my @rank = qw(Kingdom >Phylum Phylum >Class Class >Order Order >Family Family >Genus Genus Species);
+		foreach(@rank){
+			if($lca{$spname}{$_}){
+				$temp = $temp . "\t$_";
+				last;
+			}
 		}
-		$score = int($score/$total + 0.5);
-		if($score == 7){$temp = $temp . "\tKingdom";}
-		elsif($score == 6){$temp = $temp . "\tPhylum";}
-		elsif($score == 5){$temp = $temp . "\tClass";}
-		elsif($score == 4){$temp = $temp . "\tOrder";}
-		elsif($score == 3){$temp = $temp . "\tFamily";}
-		elsif($score == 2){$temp = $temp . "\tGenus";}
-		elsif($score == 1){$temp = $temp . "\tSpecies";}
 	}
 	
 	
