@@ -170,6 +170,7 @@ my %family;
 if($family){
 	open(FILE, "<", ".\/Dictionary\/$family") or die ("error:$!");
 	while(<FILE>){
+		$_ =~ s/\r//g;
 		chomp($_);
 		my @temp = split(/\t/, $_);
 		unless($temp[1]){next;}
