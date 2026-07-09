@@ -83,22 +83,25 @@ if($primer){
 }else{
 	open(FILE, "<", ".\/Results\/5_1_Fasta_for_Phylogenetic_Analysis\/merged_seq_with_family_name.fas") or die ("error:$!");
 }
+my $na = 0;
 while(<FILE>){
 	chomp($_);
 	$_ =~ s/\r//g;
-	if($_ =~ />N_A_/){last;}
+	if($_ =~ />N_A_/){$na = 1; next;}
 	if($_ =~ /^>([^_]+_[^_]+)_([^_]+)/){
 		$familyn = $1;
 		$genus = $2;
 		if($_ =~ /_U[^_]+_([^_]+)/){
-			print "$1\n";
 			$genus = $1;
 		}
 		$dataname = $_;
 		$fname{$familyn}++;
 		$genus{$familyn}{$genus}++;
 		if($fname{$familyn} == 1){push(@familyn, $familyn);}
-	}else{$data{$familyn}{$dataname} = $_;}
+	}else{
+		if($na){$na = 0;}
+		else{$data{$familyn}{$dataname} = $_;}
+	}
 }
 close(FILE);
 undef($familyn); undef($dataname); undef($genus);
