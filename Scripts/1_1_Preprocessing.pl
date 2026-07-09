@@ -481,11 +481,30 @@ foreach(sort keys %file){
 					$_ =~ s/\r//g;
 					if($vv){
 						if($_ =~ /(\d+)\s+sequences\s+kept/){
+							my $q = $1;
 							my $per = sprintf("%.2f", $1/$raw{$file}*100);
-							$log{$file} = $log{$file} . "\t$1 ($per%)";
+							$_ =~ /(\d+)\s+sequences\s+discard/;
+							my $slog = $1 + $q;
+							my $sper = sprintf("%.2f", $slog/$raw{$file}*100);
+							unless($slog){
+								$log{$file} = $log{$file} . "\t0 (0.00%)\t0 (0.00%)";
+							}else{
+								$log{$file} = $log{$file} . "\t$slog ($sper%)";
+							}
+							$log{$file} = $log{$file} . "\t$q ($per%)";
 							$log_check = 1;
 						}
 					}else{
+						my $slog;
+						if($_ =~ /(\d+)\s+Reads/){
+							$slog = $1;
+							my $sper = sprintf("%.2f", $slog/$raw{$file}*100);
+							unless($slog){
+								$log{$file} = $log{$file} . "\t0 (0.00%)\t0 (0.00%)";
+							}else{
+								$log{$file} = $log{$file} . "\t$slog ($sper%)";
+							}
+						}
 						if($_ =~ /(\d+)\s+Filtered/){
 							my $per = sprintf("%.2f", $1/$raw{$file}*100);
 							$log{$file} = $log{$file} . "\t$1 ($per%)";
